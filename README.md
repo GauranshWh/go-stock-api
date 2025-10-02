@@ -83,6 +83,7 @@ Delete a stock:
 Bash
 
 curl -X DELETE http://localhost:8080/stocks/NVDA
+
 Future Improvements
 [ ] Implement user authentication and authorization using JWT.
 
@@ -90,5 +91,4 @@ Future Improvements
 
 [ ] Integrate a real-time price feed using Websockets.
 
-License
-This project is licensed under the MIT License.
+
