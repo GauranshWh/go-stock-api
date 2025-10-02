@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:13
+    container_name: stock_api_db
+    # Read environment variables from the .env file
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    container_name: stock_api_app
+    build: .
+    ports:
+      - "8080:8080"
+    # Read environment variables from the .env file
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
